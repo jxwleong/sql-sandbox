@@ -1,3 +1,8 @@
+DROP TABLE Customers;
+DROP TABLE DeliveryFactTable;
+DROP TABLE Orders;
+DROP TABLE Shippings;
+
 CREATE TABLE DeliveryFactTable( 
   RES_ID INT NOT NULL,
   ORDER_ID INT NOT NULL,
