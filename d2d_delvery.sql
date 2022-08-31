@@ -107,25 +107,18 @@ CREATE TABLE PaymentDimensionTable(
 -- 8. Chambers Grill, 3 Jalan Stesen Sentral, Kuala Lumpur 50470 Malaysia, +60 3-2264 2264
 INSERT INTO RestaurantDimensionTable (RES_ID, RES_NAME, RES_TEL, RES_CATEGORY)
 VALUES (1, "Miyabi", "+60 3-7622 8999", "Japanese");
-
 INSERT INTO RestaurantDimensionTable (RES_ID, RES_NAME, RES_TEL, RES_CATEGORY)
 VALUES (2, "Fatty Crab Restaurant", "+60 3-7804 5758", "Chinese");
-
 INSERT INTO RestaurantDimensionTable (RES_ID, RES_NAME, RES_TEL, RES_CATEGORY)
 VALUES (3, "Khan's Indian Cuisine", "+60 17-865 4661", "Indian");
-
 INSERT INTO RestaurantDimensionTable (RES_ID, RES_NAME, RES_TEL, RES_CATEGORY)
 VALUES (4, "Nizza", "+60 3-2720 6628", "French");
-
 INSERT INTO RestaurantDimensionTable (RES_ID, RES_NAME, RES_TEL, RES_CATEGORY)
 VALUES (5, "Makan Kitchen", "+60 3-2172 7272", "Chinese");
-
 INSERT INTO RestaurantDimensionTable (RES_ID, RES_NAME, RES_TEL, RES_CATEGORY)
 VALUES (6, "Positano Risto", "+60 3-6411 3799", "Italian");
-
 INSERT INTO RestaurantDimensionTable (RES_ID, RES_NAME, RES_TEL, RES_CATEGORY)
 VALUES (7, "LOKL Coffee Co.", "+60 18-968 5515", "Cafe");
-
 INSERT INTO RestaurantDimensionTable (RES_ID, RES_NAME, RES_TEL, RES_CATEGORY)
 VALUES (8, "Chambers Grill", "+60 3-2264 2264", "Steakhouse");
 
@@ -139,42 +132,40 @@ VALUES (8, "Chambers Grill", "+60 3-2264 2264", "Steakhouse");
 -- 6. Kanye Doe, +60 12- 101 1235, kyDoe11
 -- 7. Muhammad Abu, +60 12- 101 1240, abuM122!
 -- 8. Siti Mariam, +60 12- 101 1299, smariam1991
--- 9. Mike Jones, +60 12- 102 1234, mjones!@#
--- 10. David Gunther, +60 12- 102 1235, dgun777
--- 11. Clinton Wood, +60 12- 102 1240, cwood999!
--- 12. Rick Wall, +60 12- 102 1299, rwall666
 INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
 VALUES (1, "John Doe", "+60 12- 100 1234", "doedoe123");
-
 INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
 VALUES (2, "Karen Doe", "+60 12- 100 1235", "karendoe11");
-
 INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
 VALUES (3, "Johnny Ali", "+60 12- 100 1240", "ali123!");
-
 INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
 VALUES (4, "Jesicca Wall", "+60 12- 100 1299", "jeswall99");
-
 INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
 VALUES (5, "Jane Doe", "+60 12- 101 1234", "jdoe123");
-
 INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
 VALUES (6, "Kanye Doe", "+60 12- 101 1235", "kyDoe11");
-
 INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
 VALUES (7, "Muhammad Abu", "+60 12- 101 1240", "abuM122!");
-
 INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
 VALUES (8, "Siti Mariam", "+60 12- 101 1299", "smariam1991");
 
-INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
-VALUES (9, "Mike Jones", "+60 12- 102 1234", "mjones!@#");
 
-INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
-VALUES (10, "David Gunther", "+60 12- 102 1235", "dgun777");
-
-INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
-VALUES (11, "Clinton Wood", "+60 12- 102 1240", "cwood999!");
-
-INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
-VALUES (12, "Rick Wall", "+60 12- 102 1299", "rwall666");
+-- Driver Data
+-- 1. Mike Jones, +60 12- 102 1234, 970101-01-1231, Honda, VAX1299
+-- 2. David Gunther, +60 12- 102 1235, 920130-01-12879, Toyota, WWA5880
+-- 3. Clinton Wood, +60 12- 102 1240, 880101-05-1233, Suzuki, JAN1444
+-- 4. Rick Wall, +60 12- 102 1299, 870101-07-1265, Honda, TAN1266
+-- 5. Johnny Wood, +60 12- 103 1246, 881230-05-7701, Suzuki, JNA1789
+-- 6. Jimmy Doe, +60 12- 103 1399, 871111-07-1111, Honda, TAM5555
+INSERT INTO DriverDimensionTable (DRIVER_ID, DRIVER_NAME, DRIVER_TEL, DRIVER_IC_NUM, DRIVER_CAR_BRAND, DRIVER_CAR_NUMPLATE)
+VALUES (1, "Mike Jones", "+60 12- 102 1234", "970101-01-1231", "Honda", "VAX1299");
+INSERT INTO DriverDimensionTable (DRIVER_ID, DRIVER_NAME, DRIVER_TEL, DRIVER_IC_NUM, DRIVER_CAR_BRAND, DRIVER_CAR_NUMPLATE)
+VALUES (2, "David Gunther", "+60 12- 102 1235", "920130-01-12879", "Toyota", "WWA5880");
+INSERT INTO DriverDimensionTable (DRIVER_ID, DRIVER_NAME, DRIVER_TEL, DRIVER_IC_NUM, DRIVER_CAR_BRAND, DRIVER_CAR_NUMPLATE)
+VALUES (3, "Clinton Wood", "+60 12- 102 1240", "880101-05-1233", "Suzuki", "JAN1444");
+INSERT INTO DriverDimensionTable (DRIVER_ID, DRIVER_NAME, DRIVER_TEL, DRIVER_IC_NUM, DRIVER_CAR_BRAND, DRIVER_CAR_NUMPLATE)
+VALUES (4, "Rick Wall", "+60 12- 102 1299", "870101-07-1265", "Honda", "TAN1266");
+INSERT INTO DriverDimensionTable (DRIVER_ID, DRIVER_NAME, DRIVER_TEL, DRIVER_IC_NUM, DRIVER_CAR_BRAND, DRIVER_CAR_NUMPLATE)
+VALUES (5, "Johnny Wood", "+60 12- 103 1246", "881230-05-7701", "Suzuki", "JNA1789");
+INSERT INTO DriverDimensionTable (DRIVER_ID, DRIVER_NAME, DRIVER_TEL, DRIVER_IC_NUM, DRIVER_CAR_BRAND, DRIVER_CAR_NUMPLATE)
+VALUES (6, "Jimmy Doe", "+60 12- 103 1399", "871111-07-1111", "Honda", "TAM5555");
