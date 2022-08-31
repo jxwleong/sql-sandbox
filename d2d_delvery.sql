@@ -94,3 +94,37 @@ CREATE TABLE PaymentDimensionTable(
   
   PRIMARY KEY (PAYMENT_ID)
 );
+
+
+-- Restaurant Data
+-- 1. Miyabi, Jalan Utara C Sheraton Petaling Jaya Hotel, Petaling Jaya 46200 Malaysia, +60 3-7622 8999
+-- 2. Fatty Crab Restaurant, No 2 Jalan SS 24/13 Taman Megah, Petaling Jaya 47301 Malaysia, +60 3-7804 5758
+-- 3. Khan's Indian Cuisine, Jalan Kerinchi Unit 1-7, 1-8, 1-9, 1-10, Level 1, The Sphere, No.1, Avenue 1, Bangsar South City, No.8,, Kuala Lumpur 59200 Malaysia, +60 17-865 4661
+-- 4. Nizza, No 6 Jalan Damanlela Bukit Damansara Sofitel Kuala Lumpur Damansara, Kuala Lumpur 50490 Malaysia, +60 3-2720 6628
+-- 5. Makan Kitchen, The Intermark, 348 Jalan Tun Razak, The Intermark, 348 Jalan Tun Razak,, Kuala Lumpur 50400 Malaysia, +60 3-2172 7272
+-- 6. Positano Risto, Jalan Dutamas 1 Block C1, Lot 2, Level G3, Publika Shopping Gallery, Solaris Dutamas, No. 1, Kuala Lumpur 50480 Malaysia, +60 3-6411 3799
+-- 7. LOKL Coffee Co., 30 Jalan Tun H S Lee, Kuala Lumpur 50100 Malaysia, +60 18-968 5515
+-- 8. Chambers Grill, 3 Jalan Stesen Sentral, Kuala Lumpur 50470 Malaysia, +60 3-2264 2264
+INSERT INTO RestaurantDimensionTable (RES_ID, RES_NAME, RES_TEL, RES_CATEGORY)
+VALUES (1, "Miyabi", "+60 3-7622 8999", "Japanese");
+
+INSERT INTO RestaurantDimensionTable (RES_ID, RES_NAME, RES_TEL, RES_CATEGORY)
+VALUES (2, "Fatty Crab Restaurant", "+60 3-7804 5758", "Chinese");
+
+INSERT INTO RestaurantDimensionTable (RES_ID, RES_NAME, RES_TEL, RES_CATEGORY)
+VALUES (3, "Khan's Indian Cuisine", "+60 17-865 4661", "Indian");
+
+INSERT INTO RestaurantDimensionTable (RES_ID, RES_NAME, RES_TEL, RES_CATEGORY)
+VALUES (4, "Nizza", "+60 3-2720 6628", "French");
+
+INSERT INTO RestaurantDimensionTable (RES_ID, RES_NAME, RES_TEL, RES_CATEGORY)
+VALUES (5, "Makan Kitchen", "+60 3-2172 7272", "Chinese");
+
+INSERT INTO RestaurantDimensionTable (RES_ID, RES_NAME, RES_TEL, RES_CATEGORY)
+VALUES (6, "Positano Risto", "+60 3-6411 3799", "Italian");
+
+INSERT INTO RestaurantDimensionTable (RES_ID, RES_NAME, RES_TEL, RES_CATEGORY)
+VALUES (7, "LOKL Coffee Co.", "+60 18-968 5515", "Cafe");
+
+INSERT INTO RestaurantDimensionTable (RES_ID, RES_NAME, RES_TEL, RES_CATEGORY)
+VALUES (5, "Chambers Grill", "+60 3-2264 2264", "Steakhouse");
