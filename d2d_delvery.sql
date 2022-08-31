@@ -127,4 +127,4 @@ INSERT INTO RestaurantDimensionTable (RES_ID, RES_NAME, RES_TEL, RES_CATEGORY)
 VALUES (7, "LOKL Coffee Co.", "+60 18-968 5515", "Cafe");
 
 INSERT INTO RestaurantDimensionTable (RES_ID, RES_NAME, RES_TEL, RES_CATEGORY)
-VALUES (5, "Chambers Grill", "+60 3-2264 2264", "Steakhouse");
+VALUES (8, "Chambers Grill", "+60 3-2264 2264", "Steakhouse");
