@@ -128,3 +128,53 @@ VALUES (7, "LOKL Coffee Co.", "+60 18-968 5515", "Cafe");
 
 INSERT INTO RestaurantDimensionTable (RES_ID, RES_NAME, RES_TEL, RES_CATEGORY)
 VALUES (8, "Chambers Grill", "+60 3-2264 2264", "Steakhouse");
+
+
+-- Customer Data
+-- 1. John Doe, +60 12- 100 1234, doedoe123
+-- 2. Karen Doe, +60 12- 100 1235, karendoe11
+-- 3. Johnny Ali, +60 12- 100 1240, ali123!
+-- 4. Jessica Wall, +60 12- 100 1299, jeswall99
+-- 5. Jane Doe, +60 12- 101 1234, jdoe123
+-- 6. Kanye Doe, +60 12- 101 1235, kyDoe11
+-- 7. Muhammad Abu, +60 12- 101 1240, abuM122!
+-- 8. Siti Mariam, +60 12- 101 1299, smariam1991
+-- 9. Mike Jones, +60 12- 102 1234, mjones!@#
+-- 10. David Gunther, +60 12- 102 1235, dgun777
+-- 11. Clinton Wood, +60 12- 102 1240, cwood999!
+-- 12. Rick Wall, +60 12- 102 1299, rwall666
+INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
+VALUES (1, "John Doe", "+60 12- 100 1234", "doedoe123");
+
+INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
+VALUES (2, "Karen Doe", "+60 12- 100 1235", "karendoe11");
+
+INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
+VALUES (3, "Johnny Ali", "+60 12- 100 1240", "ali123!");
+
+INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
+VALUES (4, "Jesicca Wall", "+60 12- 100 1299", "jeswall99");
+
+INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
+VALUES (5, "Jane Doe", "+60 12- 101 1234", "jdoe123");
+
+INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
+VALUES (6, "Kanye Doe", "+60 12- 101 1235", "kyDoe11");
+
+INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
+VALUES (7, "Muhammad Abu", "+60 12- 101 1240", "abuM122!");
+
+INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
+VALUES (8, "Siti Mariam", "+60 12- 101 1299", "smariam1991");
+
+INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
+VALUES (9, "Mike Jones", "+60 12- 102 1234", "mjones!@#");
+
+INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
+VALUES (10, "David Gunther", "+60 12- 102 1235", "dgun777");
+
+INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
+VALUES (11, "Clinton Wood", "+60 12- 102 1240", "cwood999!");
+
+INSERT INTO CustomerDimensionTable (CUST_ID, CUST_NAME, CUST_TEL, CUST_PWORD)
+VALUES (12, "Rick Wall", "+60 12- 102 1299", "rwall666");
