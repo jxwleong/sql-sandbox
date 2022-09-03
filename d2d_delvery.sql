@@ -1,4 +1,5 @@
 -- Original table https://www.programiz.com/sql/online-compiler/
+-- Original table https://www.programiz.com/sql/online-compiler/
 DROP TABLE IF EXISTS Customers;
 DROP TABLE IF EXISTS Orders;
 DROP TABLE IF EXISTS Shippings;  
@@ -87,7 +88,7 @@ CREATE TABLE OrderDimensionTable(
 );
 
 CREATE TABLE PaymentDimensionTable( 
-  PAYMENT_ID INT NOT NULL,
+  PAYMENT_ID varchar(5) NOT NULL,
   PROMO_CODE INT NOT NULL,
   PAYMENT_METHOD varchar(100) NOT NULL,
   PAYMENT_AMOUNT FLOAT(2) NOT NULL,
@@ -174,19 +175,45 @@ VALUES (6, "Jimmy Doe", "+60 12- 103 1399", "871111-07-1111", "Honda", "TAM5555"
 -- Location Data
 -- 1. "Selangor", "Petaling Jaya", 47301, "2, Jalan SS 7/26, Ss 7"
 -- 2. "Selangor", "Petaling Jaya", 46300, "Jalan 22/44 Seksyen 22, Kampung Tunku"
--- 3. "Selangor", "Petaling Jaya", 47400, "B2-01, Casa Utama, PJU 6A, Lorong Lebuh Bandar Utama"
--- 4. "Selangor", "Petaling Jaya", 47300, "32, Jalan SS 2/72, SS 2"
--- 5. "Selangor", "Petaling Jaya", 46300, "Jalan 22/44 Seksyen 22, Kampung Tunku"
+-- 3. "Wilayah Persekutuan Kuala Lumpur", "Kuala Lumpur", 53100, "Jalan Sentosa 2, Batu 7 Gombak"   
+-- 4. "Wilayah Persekutuan Kuala Lumpur", "Kuala Lumpur", 43300 , "Jalan Cemara, Taman Bukit Serdang"
+-- 5. "Selangor", "Klang", 41300 , " 41400 Malaysia, Jalan Batu Tiga Lama"
 -- 6. "Selangor", "Petaling Jaya", 47301, "Jalan PJU 1/42, Dataran Prima"
 INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
 VALUES (1, "Selangor", "Petaling Jaya", 47301, "2, Jalan SS 7/26, Ss 7");
 INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
 VALUES (2, "Selangor", "Petaling Jaya", 46300, "Jalan 22/44 Seksyen 22, Kampung Tunku");
 INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
-VALUES (3, "Selangor", "Petaling Jaya", 47400, "B2-01, Casa Utama, PJU 6A, Lorong Lebuh Bandar Utama");
+VALUES (3, "Selangor", "Kuala Lumpur", 53100, "Jalan Sentosa 2, Batu 7 Gombak");
 INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
-VALUES (4, "Selangor", "Petaling Jaya", 47300, "32, Jalan SS 2/72, SS 2");
+VALUES (4, "Wilayah Persekutuan Kuala Lumpur", "Kuala Lumpur", 43300 , "Jalan Cemara, Taman Bukit Serdang");
 INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
-VALUES (5, "Selangor", "Petaling Jaya", 46300, "Jalan 22/44 Seksyen 22, Kampung Tunku");
+VALUES (5, "Selangor", "Klang", 41300 , " 41400 Malaysia, Jalan Batu Tiga Lama");
 INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
 VALUES (6, "Selangor", "Petaling Jaya", 47301, "Jalan PJU 1/42, Dataran Prima");
+
+-- Payment Data
+-- 1. "NA", "TnG Ewallet", 50.00
+-- 2. "ACXAA", "Cash on Delivery", 30.50
+-- 3. "NA", "Credit Card", 100.35
+-- 4. "50OFF", "Debit Card", 22.50
+-- 5. "NA", "TnG Ewallet", 30.00
+-- 6. "ACXZZ", "Cash on Delivery", 37.50
+-- 7. "NA", "Credit Card", 77.35
+-- 8. "50OFF", "Credit Card", 45.50
+INSERT INTO PaymentDimensionTable (PAYMENT_ID, PROMO_CODE, PAYMENT_METHOD, PAYMENT_AMOUNT)
+VALUES (1, "NA", "TnG Ewallet", 50.00);
+INSERT INTO PaymentDimensionTable (PAYMENT_ID, PROMO_CODE, PAYMENT_METHOD, PAYMENT_AMOUNT)
+VALUES (2, "ACXAA", "Cash on Delivery", 30.50);
+INSERT INTO PaymentDimensionTable (PAYMENT_ID, PROMO_CODE, PAYMENT_METHOD, PAYMENT_AMOUNT)
+VALUES (3, "NA", "Credit Card", 100.35);
+INSERT INTO PaymentDimensionTable (PAYMENT_ID, PROMO_CODE, PAYMENT_METHOD, PAYMENT_AMOUNT)
+VALUES (4, "50OFF", "Debit Card", 22.50);
+INSERT INTO PaymentDimensionTable (PAYMENT_ID, PROMO_CODE, PAYMENT_METHOD, PAYMENT_AMOUNT)
+VALUES (5, "NA", "TnG Ewallet", 30.00);
+INSERT INTO PaymentDimensionTable (PAYMENT_ID, PROMO_CODE, PAYMENT_METHOD, PAYMENT_AMOUNT)
+VALUES (6, "ACXZZ", "Cash on Delivery", 37.50);
+INSERT INTO PaymentDimensionTable (PAYMENT_ID, PROMO_CODE, PAYMENT_METHOD, PAYMENT_AMOUNT)
+VALUES (7, "NA", "Credit Card", 77.35);
+INSERT INTO PaymentDimensionTable (PAYMENT_ID, PROMO_CODE, PAYMENT_METHOD, PAYMENT_AMOUNT)
+VALUES (8, "50OFF", "Credit Card", 45.50);
