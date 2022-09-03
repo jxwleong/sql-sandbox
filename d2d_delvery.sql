@@ -3,14 +3,18 @@ DROP TABLE IF EXISTS Customers;
 DROP TABLE IF EXISTS Orders;
 DROP TABLE IF EXISTS Shippings;  
 
-DROP TABLE IF EXISTS DeliveryFactTable;
+-- NOTE: Cannot drop table with foreign key constraint!
+--SET sql_notes=0;
 DROP TABLE IF EXISTS RestaurantDimensionTable ;
 DROP TABLE IF EXISTS CustomerDimensionTable;
 DROP TABLE IF EXISTS DriverDimensionTable;
 DROP TABLE IF EXISTS LocationDimensionTable;
 DROP TABLE IF EXISTS OrderDimensionTable;
 DROP TABLE IF EXISTS PaymentDimensionTable;
+DROP TABLE IF EXISTS DeliveryFactTable;
 
+
+------------------------CREATE TABLE------------------------
 CREATE TABLE DeliveryFactTable( 
   RES_ID INT NOT NULL,
   ORDER_ID INT NOT NULL,
@@ -25,18 +29,18 @@ CREATE TABLE DeliveryFactTable(
   
   DELIVERY_ID INT NOT NULL,
   DELIVERY_QUANTITY INT NOT NULL,
-  DELIVERY_REVENUE INT NOT NULL,
-  DELIVERY_PICKUPTIME INT NOT NULL,
-  DELIVERY_ARRIVALTIME INT NOT NULL,
+  DELIVERY_REVENUE FLOAT(2) NOT NULL,
+  DELIVERY_PICKUPTIME datetime NOT NULL,
+  DELIVERY_ARRIVALTIME datetime NOT NULL,
   
-  PRIMARY KEY (DELIVERY_ID),
-  FOREIGN KEY (RES_ID) REFERENCES RestaurantDimensionTable(RES_ID),
-  FOREIGN KEY (ORDER_ID) REFERENCES OrderDimensionTable(ORDER_ID),
-  FOREIGN KEY (CUST_ID) REFERENCES CustomerDimensionTable(CUST_ID),
-  FOREIGN KEY (PAYMENT_ID) REFERENCES PaymentDimensionTable(PAYMENT_ID),
-  FOREIGN KEY (DRIVER_ID) REFERENCES DriverDimensionTable(DRIVER_ID),
-  FOREIGN KEY (CUST_LOCATION_ID) REFERENCES LocationDimensionTable(LOCATION_ID),
-  FOREIGN KEY (RES_LOCATION_ID) REFERENCES LocationDimensionTable(LOCATION_ID)
+  PRIMARY KEY (DELIVERY_ID)--,
+  --FOREIGN KEY (RES_ID) REFERENCES RestaurantDimensionTable(RES_ID),
+  --FOREIGN KEY (ORDER_ID) REFERENCES OrderDimensionTable(ORDER_ID),
+  --FOREIGN KEY (CUST_ID) REFERENCES CustomerDimensionTable(CUST_ID),
+  --FOREIGN KEY (PAYMENT_ID) REFERENCES PaymentDimensionTable(PAYMENT_ID),
+  --FOREIGN KEY (DRIVER_ID) REFERENCES DriverDimensionTable(DRIVER_ID),
+  --FOREIGN KEY (CUST_LOCATION_ID) REFERENCES LocationDimensionTable(LOCATION_ID),
+  --FOREIGN KEY (RES_LOCATION_ID) REFERENCES LocationDimensionTable(LOCATION_ID)
 );
 
 CREATE TABLE RestaurantDimensionTable( 
@@ -83,7 +87,7 @@ CREATE TABLE OrderDimensionTable(
   ORDER_YEAR INT NOT NULL,
   ORDER_MONTH INT NOT NULL,
   ORDER_DAY INT NOT NULL,
-  ORDER_TIME INT NOT NULL,
+  ORDER_TIME TIME NOT NULL,
   
   PRIMARY KEY (ORDER_ID)
 );
@@ -98,6 +102,13 @@ CREATE TABLE PaymentDimensionTable(
 );
 
 
+
+------------------------INSERT DATA------------------------
+-- Delivery Fact Table Data
+INSERT INTO DeliveryFactTable (RES_ID, ORDER_ID, CUST_ID, DRIVER_ID, PAYMENT_ID, CUST_LOCATION_ID, RES_LOCATION_ID,
+                               ORDER_STATUS, ORDER_AMT, DELIVERY_ID, DELIVERY_QUANTITY, DELIVERY_REVENUE, DELIVERY_PICKUPTIME,
+                               DELIVERY_ARRIVALTIME)
+VALUES(1, 1, 1, 1, 1, 1, 9, "Completed", 2, 1, 1, 7.00, "2022-08-01 09:30:00", "2022-08-01 09:45:00");
 -- Restaurant Data
 -- 1. Miyabi, Jalan Utara C Sheraton Petaling Jaya Hotel, Petaling Jaya 46200 Malaysia, +60 3-7622 8999
 -- 2. Fatty Crab Restaurant, No 2 Jalan SS 24/13 Taman Megah, Petaling Jaya 47301 Malaysia, +60 3-7804 5758
@@ -248,27 +259,31 @@ INSERT INTO PaymentDimensionTable (PAYMENT_ID, PROMO_CODE, PAYMENT_METHOD, PAYME
 VALUES (8, "50OFF", "Credit Card", 45.50);
 
 -- Order Data
--- 1. "Completed", 2022, 08, 1, 090025
--- 2. "Completed", 2022, 08, 2, 011030
--- 3. "Completed", 2022, 08, 2, 131030
--- 4. "Completed", 2022, 08, 2, 152520
--- 5. "Completed", 2022, 08, 3, 100045
--- 6. "Completed", 2022, 08, 3, 111344
--- 7. "Completed", 2022, 08, 3, 123045
--- 8. "Completed", 2022, 08, 3, 170012
+-- 1. "Completed", 2022, 08, 1, "09:00:25"
+-- 2. "Completed", 2022, 08, 2, "10:10:30"
+-- 3. "Completed", 2022, 08, 2, "13:10:30"
+-- 4. "Completed", 2022, 08, 2, "15:25:20"
+-- 5. "Completed", 2022, 08, 3, "10:00:45"
+-- 6. "Completed", 2022, 08, 3, "11:13:44"
+-- 7. "Completed", 2022, 08, 3, "12:30:45"
+-- 8. "Completed", 2022, 08, 3, "17:00:12"
 INSERT INTO OrderDimensionTable (ORDER_ID, ORDER_YEAR, ORDER_MONTH, ORDER_DAY, ORDER_TIME)
-VALUES (1, 2022, 08, 1, 090025);
+VALUES (1, 2022, 08, 1, "09:00:25");
 INSERT INTO OrderDimensionTable (ORDER_ID, ORDER_YEAR, ORDER_MONTH, ORDER_DAY, ORDER_TIME)
-VALUES (2, 2022, 08, 2, 011030);
+VALUES (2, 2022, 08, 2, "10:10:30");
 INSERT INTO OrderDimensionTable (ORDER_ID, ORDER_YEAR, ORDER_MONTH, ORDER_DAY, ORDER_TIME)
-VALUES (3, 2022, 08, 2, 131030);
+VALUES (3, 2022, 08, 2, "13:10:30");
 INSERT INTO OrderDimensionTable (ORDER_ID, ORDER_YEAR, ORDER_MONTH, ORDER_DAY, ORDER_TIME)
-VALUES (4, 2022, 08, 2, 152520);
+VALUES (4, 2022, 08, 2, "15:25:20");
 INSERT INTO OrderDimensionTable (ORDER_ID, ORDER_YEAR, ORDER_MONTH, ORDER_DAY, ORDER_TIME)
-VALUES (5, 2022, 08, 3, 100045);
+VALUES (5, 2022, 08, 3, "10:00:45");
 INSERT INTO OrderDimensionTable (ORDER_ID, ORDER_YEAR, ORDER_MONTH, ORDER_DAY, ORDER_TIME)
-VALUES (6, 2022, 08, 3, 111344);
+VALUES (6, 2022, 08, 3, "11:13:44");
 INSERT INTO OrderDimensionTable (ORDER_ID, ORDER_YEAR, ORDER_MONTH, ORDER_DAY, ORDER_TIME)
-VALUES (7, 2022, 08, 3, 123045);
+VALUES (7, 2022, 08, 3, "12:30:45");
 INSERT INTO OrderDimensionTable (ORDER_ID, ORDER_YEAR, ORDER_MONTH, ORDER_DAY, ORDER_TIME)
-VALUES (8, 2022, 08, 3, 170012);
+VALUES (8, 2022, 08, 3, "17:00:12");
+
+
+
+------------------------QUERY------------------------
