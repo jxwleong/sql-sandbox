@@ -1,10 +1,9 @@
--- Original table https://www.programiz.com/sql/online-compiler/
+-- To Drop original table https://www.programiz.com/sql/online-compiler/
 DROP TABLE IF EXISTS Customers;
 DROP TABLE IF EXISTS Orders;
 DROP TABLE IF EXISTS Shippings;  
 
 -- NOTE: Cannot drop table with foreign key constraint!
---SET sql_notes=0;
 DROP TABLE IF EXISTS RestaurantDimensionTable ;
 DROP TABLE IF EXISTS CustomerDimensionTable;
 DROP TABLE IF EXISTS DriverDimensionTable;
@@ -108,7 +107,37 @@ CREATE TABLE PaymentDimensionTable(
 INSERT INTO DeliveryFactTable (RES_ID, ORDER_ID, CUST_ID, DRIVER_ID, PAYMENT_ID, CUST_LOCATION_ID, RES_LOCATION_ID,
                                ORDER_STATUS, ORDER_AMT, DELIVERY_ID, DELIVERY_QUANTITY, DELIVERY_REVENUE, DELIVERY_PICKUPTIME,
                                DELIVERY_ARRIVALTIME)
-VALUES(1, 1, 1, 1, 1, 1, 9, "Completed", 2, 1, 1, 7.00, "2022-08-01 09:30:00", "2022-08-01 09:45:00");
+VALUES(1, 1, 1, 1, 1, 1, 9, "Completed", 1, 1, 1, 7.00, "2022-08-01 09:25:00", "2022-08-01 09:45:00");
+INSERT INTO DeliveryFactTable (RES_ID, ORDER_ID, CUST_ID, DRIVER_ID, PAYMENT_ID, CUST_LOCATION_ID, RES_LOCATION_ID,
+                               ORDER_STATUS, ORDER_AMT, DELIVERY_ID, DELIVERY_QUANTITY, DELIVERY_REVENUE, DELIVERY_PICKUPTIME,
+                               DELIVERY_ARRIVALTIME)
+VALUES(2, 2, 2, 2, 2, 2, 10, "Completed", 1, 2, 1, 5.00, "2022-08-02 10:40:00", "2022-08-02 11:00:00");
+INSERT INTO DeliveryFactTable (RES_ID, ORDER_ID, CUST_ID, DRIVER_ID, PAYMENT_ID, CUST_LOCATION_ID, RES_LOCATION_ID,
+                               ORDER_STATUS, ORDER_AMT, DELIVERY_ID, DELIVERY_QUANTITY, DELIVERY_REVENUE, DELIVERY_PICKUPTIME,
+                               DELIVERY_ARRIVALTIME)
+VALUES(3, 3, 3, 3, 3, 3, 11, "Completed", 1, 3, 1, 10.00, "2022-08-02 13:30:00", "2022-08-02 13:45:00");
+INSERT INTO DeliveryFactTable (RES_ID, ORDER_ID, CUST_ID, DRIVER_ID, PAYMENT_ID, CUST_LOCATION_ID, RES_LOCATION_ID,
+                               ORDER_STATUS, ORDER_AMT, DELIVERY_ID, DELIVERY_QUANTITY, DELIVERY_REVENUE, DELIVERY_PICKUPTIME,
+                               DELIVERY_ARRIVALTIME)
+VALUES(4, 4, 4, 4, 4, 4, 12, "Completed", 1, 4, 1, 6.00, "2022-08-02 16:00:00", "2022-08-02 16:30:00");
+INSERT INTO DeliveryFactTable (RES_ID, ORDER_ID, CUST_ID, DRIVER_ID, PAYMENT_ID, CUST_LOCATION_ID, RES_LOCATION_ID,
+                               ORDER_STATUS, ORDER_AMT, DELIVERY_ID, DELIVERY_QUANTITY, DELIVERY_REVENUE, DELIVERY_PICKUPTIME,
+                               DELIVERY_ARRIVALTIME)
+VALUES(5, 5, 5, 5, 5, 5, 13, "Completed", 1, 5, 1, 4.00, "2022-08-03 10:15:00", "2022-08-03 10:45:00");
+INSERT INTO DeliveryFactTable (RES_ID, ORDER_ID, CUST_ID, DRIVER_ID, PAYMENT_ID, CUST_LOCATION_ID, RES_LOCATION_ID,
+                               ORDER_STATUS, ORDER_AMT, DELIVERY_ID, DELIVERY_QUANTITY, DELIVERY_REVENUE, DELIVERY_PICKUPTIME,
+                               DELIVERY_ARRIVALTIME)
+VALUES(6, 6, 6, 6, 6, 6, 14, "Completed", 1, 6, 1, 5.00, "2022-08-03 11:40:00", "2022-08-03 12:20:00");
+INSERT INTO DeliveryFactTable (RES_ID, ORDER_ID, CUST_ID, DRIVER_ID, PAYMENT_ID, CUST_LOCATION_ID, RES_LOCATION_ID,
+                               ORDER_STATUS, ORDER_AMT, DELIVERY_ID, DELIVERY_QUANTITY, DELIVERY_REVENUE, DELIVERY_PICKUPTIME,
+                               DELIVERY_ARRIVALTIME)
+VALUES(7, 7, 7, 7, 7, 7, 15, "Completed", 1, 7, 1, 9.00, "2022-08-03 12:50:30", "2022-08-02 13:20:45");
+INSERT INTO DeliveryFactTable (RES_ID, ORDER_ID, CUST_ID, DRIVER_ID, PAYMENT_ID, CUST_LOCATION_ID, RES_LOCATION_ID,
+                               ORDER_STATUS, ORDER_AMT, DELIVERY_ID, DELIVERY_QUANTITY, DELIVERY_REVENUE, DELIVERY_PICKUPTIME,
+                               DELIVERY_ARRIVALTIME)
+VALUES(8, 8, 8, 8, 8, 8, 16, "Completed", 1, 8, 1, 8.00, "2022-08-03 17:30:00", "2022-08-02 18:00:00");
+
+
 -- Restaurant Data
 -- 1. Miyabi, Jalan Utara C Sheraton Petaling Jaya Hotel, Petaling Jaya 46200 Malaysia, +60 3-7622 8999
 -- 2. Fatty Crab Restaurant, No 2 Jalan SS 24/13 Taman Megah, Petaling Jaya 47301 Malaysia, +60 3-7804 5758
