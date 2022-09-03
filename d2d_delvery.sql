@@ -174,12 +174,23 @@ VALUES (6, "Jimmy Doe", "+60 12- 103 1399", "871111-07-1111", "Honda", "TAM5555"
 
 
 -- Location Data
+-- Customer
 -- 1. "Selangor", "Petaling Jaya", 47301, "2, Jalan SS 7/26, Ss 7"
 -- 2. "Selangor", "Petaling Jaya", 46300, "Jalan 22/44 Seksyen 22, Kampung Tunku"
 -- 3. "Wilayah Persekutuan Kuala Lumpur", "Kuala Lumpur", 53100, "Jalan Sentosa 2, Batu 7 Gombak"   
 -- 4. "Wilayah Persekutuan Kuala Lumpur", "Kuala Lumpur", 43300 , "Jalan Cemara, Taman Bukit Serdang"
--- 5. "Selangor", "Klang", 41300 , " 41400 Malaysia, Jalan Batu Tiga Lama"
+-- 5. "Selangor", "Klang", 41300 , Jalan Batu Tiga Lama"
 -- 6. "Selangor", "Petaling Jaya", 47301, "Jalan PJU 1/42, Dataran Prima"
+
+-- Restaurant
+-- 7. "Selangor", "Petaling Jaya", 46200, "Lorong Utara C, Pjs 52"
+-- 8. "Selangor", "Petaling Jaya", 47301, " 2, Jalan SS 24/13, Taman Megah"
+-- 9. "Wilayah Persekutuan Kuala Lumpur", "Kuala Lumpur", 59000, "No.8, Level 1, The Sphere No.1, Avenue 1, Jalan Kerinchi, Bangsar South"
+-- 10. "Wilayah Persekutuan Kuala Lumpur", "Kuala Lumpur", 50490, "Level 3, Sofitel Kuala Lumpur Damansara, No. 6, Jalan Damanlela, Bukit Damansara"
+-- 11. "Wilayah Persekutuan Kuala Lumpur", "Kuala Lumpur", 50400, "348, Jln Tun Razak, Kampung Datuk Keramat"
+-- 12. "Wilayah Persekutuan Kuala Lumpur", "Kuala Lumpur", 50480, "Block C1, Lot 2, Level G3, Publika Shopping Gallery, No. 1, Jln Dutamas 1, Solaris Dutamas"
+-- 13. "Wilayah Persekutuan Kuala Lumpur", "Kuala Lumpur", 50100, "30, Jalan Tun H S Lee, City Centre"
+-- 14. "Wilayah Persekutuan Kuala Lumpur", "Kuala Lumpur", 50470, "Lobby Level, 3, Jalan Stesen Sentral"
 INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
 VALUES (1, "Selangor", "Petaling Jaya", 47301, "2, Jalan SS 7/26, Ss 7");
 INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
@@ -189,10 +200,27 @@ VALUES (3, "Selangor", "Kuala Lumpur", 53100, "Jalan Sentosa 2, Batu 7 Gombak");
 INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
 VALUES (4, "Wilayah Persekutuan Kuala Lumpur", "Kuala Lumpur", 43300 , "Jalan Cemara, Taman Bukit Serdang");
 INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
-VALUES (5, "Selangor", "Klang", 41300 , " 41400 Malaysia, Jalan Batu Tiga Lama");
+VALUES (5, "Selangor", "Klang", 41300 , "Jalan Batu Tiga Lama");
 INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
 VALUES (6, "Selangor", "Petaling Jaya", 47301, "Jalan PJU 1/42, Dataran Prima");
 
+INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
+VALUES (7, "Selangor", "Petaling Jaya", 46200, "Lorong Utara C, Pjs 52");
+INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
+VALUES (8, "Selangor", "Petaling Jaya", 47301, " 2, Jalan SS 24/13, Taman Megah");
+INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
+VALUES (9, "Wilayah Persekutuan Kuala Lumpur", "Kuala Lumpur", 59000, "No.8, Level 1, The Sphere No.1, Avenue 1, Jalan Kerinchi, Bangsar South");
+INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
+VALUES (10, "Wilayah Persekutuan Kuala Lumpur", "Kuala Lumpur", 50490, "Level 3, Sofitel Kuala Lumpur Damansara, No. 6, Jalan Damanlela, Bukit Damansara");
+INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
+VALUES (11, "Wilayah Persekutuan Kuala Lumpur", "Kuala Lumpur", 50400, "348, Jln Tun Razak, Kampung Datuk Keramat");
+INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
+VALUES (12, "Wilayah Persekutuan Kuala Lumpur", "Kuala Lumpur", 50480, "Block C1, Lot 2, Level G3, Publika Shopping Gallery, No. 1, Jln Dutamas 1, Solaris Dutamas");
+INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
+VALUES (13, "Wilayah Persekutuan Kuala Lumpur", "Kuala Lumpur", 50100, "30, Jalan Tun H S Lee, City Centre");
+INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
+VALUES (14, "Wilayah Persekutuan Kuala Lumpur", "Kuala Lumpur", 50470, "Lobby Level, 3, Jalan Stesen Sentral");
+        
 -- Payment Data
 -- 1. "NA", "TnG Ewallet", 50.00
 -- 2. "ACXAA", "Cash on Delivery", 30.50
