@@ -1,5 +1,4 @@
 -- Original table https://www.programiz.com/sql/online-compiler/
--- Original table https://www.programiz.com/sql/online-compiler/
 DROP TABLE IF EXISTS Customers;
 DROP TABLE IF EXISTS Orders;
 DROP TABLE IF EXISTS Shippings;  
@@ -18,6 +17,8 @@ CREATE TABLE DeliveryFactTable(
   CUST_ID INT NOT NULL,
   DRIVER_ID INT NOT NULL,
   PAYMENT_ID INT NOT NULL,
+  CUST_LOCATION_ID INT NOT NULL,
+  RES_LOCATION_ID INT NOT NULL,
   
   ORDER_STATUS varchar(50) NOT NULL,
   ORDER_AMT INT NOT NULL,
@@ -33,7 +34,9 @@ CREATE TABLE DeliveryFactTable(
   FOREIGN KEY (ORDER_ID) REFERENCES OrderDimensionTable(ORDER_ID),
   FOREIGN KEY (CUST_ID) REFERENCES CustomerDimensionTable(CUST_ID),
   FOREIGN KEY (PAYMENT_ID) REFERENCES PaymentDimensionTable(PAYMENT_ID),
-  FOREIGN KEY (DRIVER_ID) REFERENCES DriverDimensionTable(DRIVER_ID)
+  FOREIGN KEY (DRIVER_ID) REFERENCES DriverDimensionTable(DRIVER_ID),
+  FOREIGN KEY (CUST_LOCATION_ID) REFERENCES LocationDimensionTable(LOCATION_ID),
+  FOREIGN KEY (RES_LOCATION_ID) REFERENCES LocationDimensionTable(LOCATION_ID)
 );
 
 CREATE TABLE RestaurantDimensionTable( 
