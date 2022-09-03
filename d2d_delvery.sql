@@ -90,7 +90,7 @@ CREATE TABLE PaymentDimensionTable(
   PAYMENT_ID INT NOT NULL,
   PROMO_CODE INT NOT NULL,
   PAYMENT_METHOD varchar(100) NOT NULL,
-  PAYMENT_AMOUNT INT NOT NULL,
+  PAYMENT_AMOUNT FLOAT(2) NOT NULL,
   
   PRIMARY KEY (PAYMENT_ID)
 );
@@ -169,3 +169,24 @@ INSERT INTO DriverDimensionTable (DRIVER_ID, DRIVER_NAME, DRIVER_TEL, DRIVER_IC_
 VALUES (5, "Johnny Wood", "+60 12- 103 1246", "881230-05-7701", "Suzuki", "JNA1789");
 INSERT INTO DriverDimensionTable (DRIVER_ID, DRIVER_NAME, DRIVER_TEL, DRIVER_IC_NUM, DRIVER_CAR_BRAND, DRIVER_CAR_NUMPLATE)
 VALUES (6, "Jimmy Doe", "+60 12- 103 1399", "871111-07-1111", "Honda", "TAM5555");
+
+
+-- Location Data
+-- 1. "Selangor", "Petaling Jaya", 47301, "2, Jalan SS 7/26, Ss 7"
+-- 2. "Selangor", "Petaling Jaya", 46300, "Jalan 22/44 Seksyen 22, Kampung Tunku"
+-- 3. "Selangor", "Petaling Jaya", 47400, "B2-01, Casa Utama, PJU 6A, Lorong Lebuh Bandar Utama"
+-- 4. "Selangor", "Petaling Jaya", 47300, "32, Jalan SS 2/72, SS 2"
+-- 5. "Selangor", "Petaling Jaya", 46300, "Jalan 22/44 Seksyen 22, Kampung Tunku"
+-- 6. "Selangor", "Petaling Jaya", 47301, "Jalan PJU 1/42, Dataran Prima"
+INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
+VALUES (1, "Selangor", "Petaling Jaya", 47301, "2, Jalan SS 7/26, Ss 7");
+INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
+VALUES (2, "Selangor", "Petaling Jaya", 46300, "Jalan 22/44 Seksyen 22, Kampung Tunku");
+INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
+VALUES (3, "Selangor", "Petaling Jaya", 47400, "B2-01, Casa Utama, PJU 6A, Lorong Lebuh Bandar Utama");
+INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
+VALUES (4, "Selangor", "Petaling Jaya", 47300, "32, Jalan SS 2/72, SS 2");
+INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
+VALUES (5, "Selangor", "Petaling Jaya", 46300, "Jalan 22/44 Seksyen 22, Kampung Tunku");
+INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
+VALUES (6, "Selangor", "Petaling Jaya", 47301, "Jalan PJU 1/42, Dataran Prima");
