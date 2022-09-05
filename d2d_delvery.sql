@@ -436,6 +436,8 @@ SELECT
     sum(ORDER_AMT) as 'ORDER_AMT (RM)'
 FROM deliveryfacttable 
 INNER join locationdimensiontable
-ON deliveryfacttable.CUST_LOCATION_ID = locationdimensiontable.LOCATION_ID
+ON deliveryfacttable.RES_LOCATION_ID = locationdimensiontable.LOCATION_ID
 
 GROUP BY CUBE(STATE, CITY);
+
+
