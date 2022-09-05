@@ -212,7 +212,7 @@ Restaurant
 INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
 VALUES (1, 'Selangor', 'Petaling Jaya', 47301, '2, Jalan SS 7/26, Ss 7');
 INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
-VALUES (2, 'Selangor', 'Petaling Jaya', 46300, 'Jalan 22/44 Seksyen 22, Kampung Tunku');
+VALUES (2, 'Selangor', 'Shah Alam', 46300, 'Jalan 22/44 Seksyen 22, Kampung Tunku');
 INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
 VALUES (3, 'Wilayah Persekutuan Kuala Lumpur', 'Kuala Lumpur', 53100, 'Jalan Sentosa 2, Batu 7 Gombak');
 INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
@@ -220,7 +220,7 @@ VALUES (4, 'Wilayah Persekutuan Kuala Lumpur', 'Kuala Lumpur', 43300 , 'Jalan Ce
 INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
 VALUES (5, 'Selangor', 'Klang', 41300 , 'Jalan Batu Tiga Lama');
 INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
-VALUES (6, 'Selangor', 'Petaling Jaya', 47301, 'Jalan PJU 1/42, Dataran Prima');
+VALUES (6, 'Selangor', 'Subang Jaya', 47301, 'Jalan PJU 1/42, Dataran Prima');
 
 INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
 VALUES (7, 'Selangor', 'Petaling Jaya', 46200, 'Lorong Utara C, Pjs 52');
@@ -233,9 +233,9 @@ VALUES (10, 'Wilayah Persekutuan Kuala Lumpur', 'Kuala Lumpur', 50490, 'Level 3,
 INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
 VALUES (11, 'Wilayah Persekutuan Kuala Lumpur', 'Kuala Lumpur', 50400, '348, Jln Tun Razak, Kampung Datuk Keramat');
 INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
-VALUES (12, 'Wilayah Persekutuan Kuala Lumpur', 'Kuala Lumpur', 50480, 'Block C1, Lot 2, Level G3, Publika Shopping Gallery, No. 1, Jln Dutamas 1, Solaris Dutamas');
+VALUES (12, 'Selangor', 'Shah Alam', 50480, 'Block C1, Lot 2, Level G3, Publika Shopping Gallery, No. 1, Jln Dutamas 1, Solaris Dutamas');
 INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
-VALUES (13, 'Wilayah Persekutuan Kuala Lumpur', 'Kuala Lumpur', 50100, '30, Jalan Tun H S Lee, City Centre');
+VALUES (13, 'Selangor', 'Subang Jaya', 50100, '30, Jalan Tun H S Lee, City Centre');
 INSERT INTO LocationDimensionTable (LOCATION_ID, STATE, CITY, ZIP, STREET)
 VALUES (14, 'Wilayah Persekutuan Kuala Lumpur', 'Kuala Lumpur', 50470, 'Lobby Level, 3, Jalan Stesen Sentral');
         
@@ -297,6 +297,7 @@ INSERT INTO OrderDimensionTable (ORDER_ID, ORDER_YEAR, ORDER_MONTH, ORDER_DAY, O
 VALUES (8, 2022, 08, 3, '17:00:12');
 
 
+/*DeliveryFactTable*/
 INSERT INTO DeliveryFactTable (RES_ID, ORDER_ID, CUST_ID, DRIVER_ID, PAYMENT_ID, CUST_LOCATION_ID, RES_LOCATION_ID,
                                ORDER_STATUS, ORDER_AMT, DELIVERY_ID, DELIVERY_QUANTITY, DELIVERY_REVENUE, DELIVERY_PICKUPTIME,
                                DELIVERY_ARRIVALTIME)
@@ -330,10 +331,16 @@ INSERT INTO DeliveryFactTable (RES_ID, ORDER_ID, CUST_ID, DRIVER_ID, PAYMENT_ID,
                                DELIVERY_ARRIVALTIME)
 VALUES(8, 8, 8, 3, 8, 3, 14, 'Completed', 37.50, 8, 1, 8.00, '2022-08-03 17:30:00', '2022-08-02 18:00:00');
 
-
+/*
+SELECT * from RestaurantDimensionTable;
+SELECT * from CustomerDimensionTable;
+SELECT * from DriverDimensionTable;
+SELECT * from LocationDimensionTable
+SELECT * from PaymentDimensionTable;
+SELECT * from OrderDimensionTable;
+SELECT * from DeliveryFactTable;
+*/
 /* Join tutorial: https://www.youtube.com/watch?v=TGt2xa7EzvI&ab_channel=DatabaseStar*/
-
-
 /*
 QUERY
 a. group by with rollup and order by clauses
@@ -348,10 +355,12 @@ SELECT STATE as RESTAURANT_STATE, CITY as RESTAURANT_CITY,
     sum(delivery_revenue) as 'DELIVERY_REVENUE_SUM (RM)'
 FROM deliveryfacttable 
 INNER join locationdimensiontable
-ON deliveryfacttable.CUST_LOCATION_ID = locationdimensiontable.LOCATION_ID
+ON deliveryfacttable.RES_LOCATION_ID = locationdimensiontable.LOCATION_ID
 
 GROUP BY
-	ROLLUP(STATE, CITY);
+	ROLLUP(STATE, CITY)
+ORDER BY
+	sum(delivery_revenue);
 
 -- GROUP BY ORDER_ID, CUST_LOCATION_ID, CITY, STATE; -- https://stackoverflow.com/a/13999935
 
@@ -363,7 +372,10 @@ INNER join locationdimensiontable
 ON deliveryfacttable.CUST_LOCATION_ID = locationdimensiontable.LOCATION_ID
 
 GROUP BY
-	CUBE(STATE, CITY);
+	CUBE(STATE, CITY)
+
+ORDER BY
+	SUM(ORDER_AMT);
 
 
 -- c. stored procedure
@@ -408,6 +420,7 @@ UPDATE CustomerDimensionTable
 SET CUST_TEL='+60 12- 100 1234'
 WHERE CUST_ID = 1;
 */
+
 UPDATE CustomerDimensionTable
 SET CUST_TEL='+60 12- 100 1233'
 WHERE CUST_ID = 1;
@@ -418,7 +431,7 @@ Select * from CustomerDimensionTable;
 -- e. group by with grouping sets clauses
 SELECT
 	-- https://www.youtube.com/watch?v=h25K5S998fA&ab_channel=kudvenkat
-	Case When GROUPING(STATE) = 1 Then 'Total' ELSE ISNULL(STATE, 'Unkown') END AS RESTAURANT_STATE,
+	Case When GROUPING(STATE) = 1 Then 'Total' ELSE ISNULL(STATE, 'Unknown') END AS RESTAURANT_STATE,
 	Case When GROUPING(CITY) = 1 Then 'Total' ELSE ISNULL(CITY, 'Unknown') END AS RESTAURANT_CITY,
     sum(ORDER_AMT) as 'ORDER_AMT (RM)'
 FROM deliveryfacttable 
